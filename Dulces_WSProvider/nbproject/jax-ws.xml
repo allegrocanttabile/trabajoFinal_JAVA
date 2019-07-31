@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="TipoWS">
+      <implementation-class>ws.TipoWS</implementation-class>
+    </service>
+    <service name="PersonaWS">
+      <implementation-class>ws.PersonaWS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

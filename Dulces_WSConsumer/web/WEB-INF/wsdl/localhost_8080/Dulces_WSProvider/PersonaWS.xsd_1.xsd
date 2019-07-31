@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="createSPersona" type="tns:createSPersona"/>
+
+<xs:element name="createSPersonaResponse" type="tns:createSPersonaResponse"/>
+
+<xs:element name="deleteSPersona" type="tns:deleteSPersona"/>
+
+<xs:element name="deleteSPersonaResponse" type="tns:deleteSPersonaResponse"/>
+
+<xs:element name="findSPersona" type="tns:findSPersona"/>
+
+<xs:element name="findSPersonaResponse" type="tns:findSPersonaResponse"/>
+
+<xs:element name="loginSPersona" type="tns:loginSPersona"/>
+
+<xs:element name="loginSPersonaResponse" type="tns:loginSPersonaResponse"/>
+
+<xs:element name="readSPersona" type="tns:readSPersona"/>
+
+<xs:element name="readSPersonaResponse" type="tns:readSPersonaResponse"/>
+
+<xs:element name="updateSPersona" type="tns:updateSPersona"/>
+
+<xs:element name="updateSPersonaResponse" type="tns:updateSPersonaResponse"/>
+
+<xs:complexType name="createSPersona">
+<xs:sequence>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="tns:date" minOccurs="0"/>
+<xs:element name="sexo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="tns:date" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="date">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findSPersona">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaBean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personaBean">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="sexo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSPersona">
+<xs:sequence>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="tns:date" minOccurs="0"/>
+<xs:element name="sexo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="tns:date" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginSPersona">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="readSPersona">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="readSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaBean" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteSPersona">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteSPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
