@@ -225,87 +225,116 @@
                 <h2>Agregar Personal</h2>
 
 
-                <form class="form-inline" action="DB/InsertStaff.jsp" method="post">
+                <form class="form-inline" action="../../CreatePersona" method="post">
                     <table>
                         <tr> 
-                            <td><div class="form-group">
-                                    <label for="user_id">Staff Id:</label><br>
-                                    <input type="text" class="form-control" id="user_id" name="staff_id" placeholder="Enter Your User Id">
-                                </div><br></td>
-                            <td><div class="form-group">
-                                    <label for="password">Password:</label><br>
-                                    <input type="text" class="form-control" id="password" name="password" placeholder="Enter Your Password">
-                                </div><br></td>
-                        </tr>
-                        <tr>
                             <td>
                                 <div class="form-group">
-                                    <label for="name">Name: </label><br>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
-                                </div><br>
-                            </td>
-                            <td>
-                                <div>
-                                    <label for="gender">Gender:</label><br>
-                                    <select class="form-control" id="gender" name="gender">
-                                        <option>Select</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select><br>
+                                    <label for="text">Nombre:</label><br>
+                                    <input type="text" class="form-control"  name="txtnom" placeholder="Ingrese su Nombre">
                                 </div>
+                                <br>
+                            </td>
+                            
+                            <td>
+                                <div class="form-group">
+                                    <label for="text">Apellidos:</label><br>
+                                    <input type="text" class="form-control"  name="txtape" placeholder="Ingrese su Apellido">
+                                </div>
+                                <br>
                             </td>
                         </tr>
+                        
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <label for="mobile_no">Mobile No:</label><br>
-                                    <input type="text" class="form-control" id="mobile_no" name="mobile_no"  placeholder="Enter Your Mobile No">
+                                    <label for="name">DNI</label><br>
+                                    <input type="text" class="form-control"  name="txtdni" placeholder="Ingrese su DNI">
                                 </div><br>
                             </td>
-
-                            <td>
-                                <div class="form-group">
-                                    <label for="nid">NID:</label><br>
-                                    <input type="text" class="form-control" id="nid" name="nid" placeholder="Enter Your NID">
-                                </div><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <label for="pre_address">Present Address:</label><br>
-                                    <textarea class="form-control" rows="3" id="pre_address" name="pre_address"></textarea>
-                                </div><br>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label for="per_address">Permanent Address:</label><br>
-                                    <textarea class="form-control" rows="3" id="per_address" name="per_address"></textarea>
-                                </div><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="category">Category:</label><br>
-                                <select class="form-control" id="category" name="category">
-                                    <option>Select</option>
-                                    <option>Salesman</option>
-                                    <option>Manager</option>
-
-                                </select>
-                                
-                            </td>
+                            
                             <td>
                             <div class="form-group">
-                                    <label for="">Date</label><br>
-                                    <input type="date" class="form-control" id="date" name="date" >
+                                    <label for="">Fecha Nacimiento</label><br>
+                                    <input type="date" class="form-control"  name="txtfechan" >
                                 </div><br>
                             </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td>
+                                <label for="">Sexo</label><br>
+                                <select class="form-control" name="cbosexo">
+                                    <option>F</option>
+                                    <option>M</option>
+                                </select>
+                                    
+                            </td><br>                          
+                            
+                            
+                            <td>
+                                <div class="form-group">
+                                    <label for="">Direccion:</label><br>
+                                    <textarea class="form-control" rows="3" name="txtdir"></textarea>
+                                </div><br>
+                            </td>   
+
+                         
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="">Celular:</label><br>
+                                    <input type="text" class="form-control" name="txtcel"  placeholder="Ingrese su Nro celular">
+                                    
+                                </div><br>
+                            </td>
+                           <div class="form-group">
+                                    <label for="">Fecha Ingreso</label><br>
+                                    <input type="date" class="form-control"  name="txtfechai" >
+                                </div><br>
+                            </td>
+                        </tr>
+                        
+                                               
+                        <tr>
+                            <td>
+                                <label for="">Password:</label><br>
+                               <input type="password" class="form-control" name="txtpass"  placeholder="Ingrese su password">
+                                
+                            </td><br>
+                            
+                        <!--  <td>
+                                <label for="">Cargo</label><br>
+                                <select class="form-control" name="cbocargo">
+                                    <option value="1">Oficinista</option>
+                                    <option value="2">Chofer</option>
+                                    <option value="3">Motorizado</option>
+                                    <option value="4">Ayudante</option>
+                                    <option value="5">Jefe Area Logistica</option>
+                                    <option value="6">Jefe Area Oficinas</option>
+                                </select>
+                                    
+                            </td><br>
+                            
+                            <td>
+                                <label for="">Transporte</label><br>
+                                <select class="form-control" name="cbotrans">
+                                    <option value="1">Moto</option>
+                                    <option value="2">Auto</option>
+                                    <option value="3">Canter</option>
+                                    <option value="4">Station Wagon</option>
+                                </select>
+                                    
+                            </td><br>  
+                            -->
+                            
                         </tr>
                         <tr>
                             <td>
                                 <div class="btn">
-                                    <button class="btn btn-primary">Submit</button>
+                                    <button class="btn btn-primary">Guardar</button>
                                 </div>
 
                             </td>

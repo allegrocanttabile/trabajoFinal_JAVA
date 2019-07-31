@@ -62,11 +62,11 @@ public class PersonaDaoImpl implements PersonaDao {
                persona = new PersonaBean();
                persona.setNombres(rs.getString(2));
                persona.setApellidos(rs.getString(3));
-               persona.setFechaNacimiento(rs.getString(4));
+               persona.setFechaNacimiento(rs.getDate(4));
                persona.setSexo(rs.getString(5));
                persona.setDireccion(rs.getString(6));
                persona.setCelular(rs.getString(7));
-               persona.setFechaIngreso(rs.getString(8));
+               persona.setFechaIngreso(rs.getDate(8));
                return persona;
             }
         } catch (SQLException e) {
@@ -121,11 +121,11 @@ public class PersonaDaoImpl implements PersonaDao {
                persona.setNombres(rs.getString(2));
                persona.setApellidos(rs.getString(3));
                persona.setDni(rs.getString(4));
-               persona.setFechaNacimiento(rs.getString(5));
+               persona.setFechaNacimiento(rs.getDate(5));
                persona.setSexo(rs.getString(6));
                persona.setDireccion(rs.getString(7));
                persona.setCelular(rs.getString(8));
-               persona.setFechaIngreso(rs.getString(9));
+               persona.setFechaIngreso(rs.getDate(9));
                arreglo.add(persona);
             }
             

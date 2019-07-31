@@ -20,8 +20,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="celular" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="direccion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaIngreso" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaNacimiento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="fechaIngreso" type="{http://ws/}date" minOccurs="0"/>
+ *         &lt;element name="fechaNacimiento" type="{http://ws/}date" minOccurs="0"/>
  *         &lt;element name="nombres" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pass" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sexo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -51,8 +51,8 @@ public class PersonaBean {
     protected String celular;
     protected String direccion;
     protected String dni;
-    protected String fechaIngreso;
-    protected String fechaNacimiento;
+    protected Date fechaIngreso;
+    protected Date fechaNacimiento;
     protected String nombres;
     protected String pass;
     protected String sexo;
@@ -158,10 +158,10 @@ public class PersonaBean {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Date }
      *     
      */
-    public String getFechaIngreso() {
+    public Date getFechaIngreso() {
         return fechaIngreso;
     }
 
@@ -170,10 +170,10 @@ public class PersonaBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Date }
      *     
      */
-    public void setFechaIngreso(String value) {
+    public void setFechaIngreso(Date value) {
         this.fechaIngreso = value;
     }
 
@@ -182,10 +182,10 @@ public class PersonaBean {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Date }
      *     
      */
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -194,10 +194,10 @@ public class PersonaBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Date }
      *     
      */
-    public void setFechaNacimiento(String value) {
+    public void setFechaNacimiento(Date value) {
         this.fechaNacimiento = value;
     }
 
