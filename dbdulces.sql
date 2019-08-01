@@ -17,6 +17,11 @@ cargoId int,
 transporteId int
 );
 
+
+
+insert into persona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass, cargoId, transporteId) values
+('juana', 'la cubana', '12345678', '1987-09-22', 'F', 'santa anita', '986885844', '1987-09-22', '123', '1', '1');
+
 create table cargo(
 id int not null,
 tipo varchar(200)not null,
@@ -142,6 +147,8 @@ alter table eCliente add constraint fk_EmodeloEcliente foreign key (eModeloId) r
 alter table eCliente add constraint fk_RegistroEcliente foreign key (registroId) references registro(id);
 
 */
+
+
 
 ----------- STORE PROCEDURE-------------
 

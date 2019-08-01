@@ -10,18 +10,6 @@
 <message name="loginSPersonaResponse">
 <part name="parameters" element="tns:loginSPersonaResponse"/>
 </message>
-<message name="readSPersona">
-<part name="parameters" element="tns:readSPersona"/>
-</message>
-<message name="readSPersonaResponse">
-<part name="parameters" element="tns:readSPersonaResponse"/>
-</message>
-<message name="updateSPersona">
-<part name="parameters" element="tns:updateSPersona"/>
-</message>
-<message name="updateSPersonaResponse">
-<part name="parameters" element="tns:updateSPersonaResponse"/>
-</message>
 <message name="findSPersona">
 <part name="parameters" element="tns:findSPersona"/>
 </message>
@@ -40,18 +28,22 @@
 <message name="deleteSPersonaResponse">
 <part name="parameters" element="tns:deleteSPersonaResponse"/>
 </message>
+<message name="readSPersona">
+<part name="parameters" element="tns:readSPersona"/>
+</message>
+<message name="readSPersonaResponse">
+<part name="parameters" element="tns:readSPersonaResponse"/>
+</message>
+<message name="updateSPersona">
+<part name="parameters" element="tns:updateSPersona"/>
+</message>
+<message name="updateSPersonaResponse">
+<part name="parameters" element="tns:updateSPersonaResponse"/>
+</message>
 <portType name="PersonaWS">
 <operation name="loginSPersona">
 <input wsam:Action="http://ws/PersonaWS/loginSPersonaRequest" message="tns:loginSPersona"/>
 <output wsam:Action="http://ws/PersonaWS/loginSPersonaResponse" message="tns:loginSPersonaResponse"/>
-</operation>
-<operation name="readSPersona">
-<input wsam:Action="http://ws/PersonaWS/readSPersonaRequest" message="tns:readSPersona"/>
-<output wsam:Action="http://ws/PersonaWS/readSPersonaResponse" message="tns:readSPersonaResponse"/>
-</operation>
-<operation name="updateSPersona">
-<input wsam:Action="http://ws/PersonaWS/updateSPersonaRequest" message="tns:updateSPersona"/>
-<output wsam:Action="http://ws/PersonaWS/updateSPersonaResponse" message="tns:updateSPersonaResponse"/>
 </operation>
 <operation name="findSPersona">
 <input wsam:Action="http://ws/PersonaWS/findSPersonaRequest" message="tns:findSPersona"/>
@@ -65,28 +57,18 @@
 <input wsam:Action="http://ws/PersonaWS/deleteSPersonaRequest" message="tns:deleteSPersona"/>
 <output wsam:Action="http://ws/PersonaWS/deleteSPersonaResponse" message="tns:deleteSPersonaResponse"/>
 </operation>
+<operation name="readSPersona">
+<input wsam:Action="http://ws/PersonaWS/readSPersonaRequest" message="tns:readSPersona"/>
+<output wsam:Action="http://ws/PersonaWS/readSPersonaResponse" message="tns:readSPersonaResponse"/>
+</operation>
+<operation name="updateSPersona">
+<input wsam:Action="http://ws/PersonaWS/updateSPersonaRequest" message="tns:updateSPersona"/>
+<output wsam:Action="http://ws/PersonaWS/updateSPersonaResponse" message="tns:updateSPersonaResponse"/>
+</operation>
 </portType>
 <binding name="PersonaWSPortBinding" type="tns:PersonaWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="loginSPersona">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="readSPersona">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateSPersona">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -114,6 +96,24 @@
 </output>
 </operation>
 <operation name="deleteSPersona">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="readSPersona">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateSPersona">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

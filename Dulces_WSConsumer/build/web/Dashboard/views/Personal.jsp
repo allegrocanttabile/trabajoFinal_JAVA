@@ -3,8 +3,8 @@
     Created on : Jul 29, 2019, 6:10:46 PM
     Author     : AllegroCanttabile
 --%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
+<%--<%@page import="java.util.ArrayList"%>--%>
+<%--<%@page import="java.util.List"%>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -350,54 +350,6 @@
             </div>
                 
                 
-                <div class="panel panel-primary" style="overflow: auto">
-                            <div class="container">
-                               <header class="major">
-                            <h1>Detalle del Personal</h1>
-                    </header>
-                    <% 
-                        try{
-                            ArrayList<Usuario> arreglo;
-                            arreglo = (ArrayList<Usuario>)request.getAttribute("arreglo");
-                            if (arreglo != null){
-                            out.println("<table>");
-                            out.println("<table>");
-                            out.println("<thead>");
-                            out.println("<tr>");
-                            out.println("<th>Nombres</th>");
-                            out.println("<th>Apellidos</th>");
-                            out.println("<th>DNI</th>");
-                            out.println("<th>Fecha Nacimiento</th>");
-                            out.println("<th>Sexo</th>");
-                            out.println("<th>Direccion</th>");
-                            out.println("<th>Celular</th>");
-                            out.println("<th>Fecha Ingreso</th>");
-                            out.println("<th>Password</th>");
-                            out.println("<th>Cargo</th>");
-                            out.println("<th>Transporte</th>");
-                            out.println("</tr>");
-                            out.println("</thead>");
-                            out.println("<tbody>");
-                            for(int x=0;x<arreglo.size();x++) {
-                                out.println("<tr>");
-                                out.println("<td>" + arreglo.get(x).getNombres() + "</td>");
-                                out.println("<td>" + arreglo.get(x).getApellidos() + "</td>");
-                                out.println("<td>" + arreglo.get(x).getNickname() + "</td>");
-                                out.println("<td>" + arreglo.get(x).getEdad() + "</td>");
-                                out.println("<td>" + arreglo.get(x).getDireccion() + "</td>");
-                                out.println("</tr>");
-                            }
-                            out.println("</tbody>");
-                            out.println("</table>");
-                            }
-                        }catch(Exception e){
-
-                        }
-                    %>
-
-                                
-                            </div>
-                        </div>
             
 
 
