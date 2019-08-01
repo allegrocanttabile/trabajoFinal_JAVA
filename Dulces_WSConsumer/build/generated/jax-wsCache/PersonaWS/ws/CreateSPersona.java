@@ -19,12 +19,14 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="nombres" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="apellidos" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaNacimiento" type="{http://ws/}date" minOccurs="0"/>
+ *         &lt;element name="fechaNacimiento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sexo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="direccion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="celular" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaIngreso" type="{http://ws/}date" minOccurs="0"/>
+ *         &lt;element name="fechaIngreso" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="cargoId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="transporteId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,19 +45,23 @@ import javax.xml.bind.annotation.XmlType;
     "direccion",
     "celular",
     "fechaIngreso",
-    "password"
+    "password",
+    "cargoId",
+    "transporteId"
 })
 public class CreateSPersona {
 
     protected String nombres;
     protected String apellidos;
     protected String dni;
-    protected Date fechaNacimiento;
+    protected String fechaNacimiento;
     protected String sexo;
     protected String direccion;
     protected String celular;
-    protected Date fechaIngreso;
+    protected String fechaIngreso;
     protected String password;
+    protected String cargoId;
+    protected String transporteId;
 
     /**
      * Gets the value of the nombres property.
@@ -134,10 +140,10 @@ public class CreateSPersona {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -146,10 +152,10 @@ public class CreateSPersona {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public void setFechaNacimiento(Date value) {
+    public void setFechaNacimiento(String value) {
         this.fechaNacimiento = value;
     }
 
@@ -230,10 +236,10 @@ public class CreateSPersona {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
@@ -242,10 +248,10 @@ public class CreateSPersona {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public void setFechaIngreso(Date value) {
+    public void setFechaIngreso(String value) {
         this.fechaIngreso = value;
     }
 
@@ -271,6 +277,54 @@ public class CreateSPersona {
      */
     public void setPassword(String value) {
         this.password = value;
+    }
+
+    /**
+     * Gets the value of the cargoId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCargoId() {
+        return cargoId;
+    }
+
+    /**
+     * Sets the value of the cargoId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCargoId(String value) {
+        this.cargoId = value;
+    }
+
+    /**
+     * Gets the value of the transporteId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTransporteId() {
+        return transporteId;
+    }
+
+    /**
+     * Sets the value of the transporteId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTransporteId(String value) {
+        this.transporteId = value;
     }
 
 }

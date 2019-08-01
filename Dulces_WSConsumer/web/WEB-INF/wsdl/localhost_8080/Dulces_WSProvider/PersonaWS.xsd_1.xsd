@@ -29,17 +29,15 @@
 <xs:element name="nombres" type="xs:string" minOccurs="0"/>
 <xs:element name="apellidos" type="xs:string" minOccurs="0"/>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="fechaNacimiento" type="tns:date" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0"/>
 <xs:element name="sexo" type="xs:string" minOccurs="0"/>
 <xs:element name="direccion" type="xs:string" minOccurs="0"/>
 <xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="fechaIngreso" type="tns:date" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:string" minOccurs="0"/>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="cargoId" type="xs:string" minOccurs="0"/>
+<xs:element name="transporteId" type="xs:string" minOccurs="0"/>
 </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="date">
-<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="createSPersonaResponse">
@@ -63,14 +61,16 @@
 <xs:complexType name="personaBean">
 <xs:sequence>
 <xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="cargoId" type="xs:string" minOccurs="0"/>
 <xs:element name="celular" type="xs:string" minOccurs="0"/>
 <xs:element name="direccion" type="xs:string" minOccurs="0"/>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="fechaIngreso" type="tns:date" minOccurs="0"/>
-<xs:element name="fechaNacimiento" type="tns:date" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0"/>
 <xs:element name="nombres" type="xs:string" minOccurs="0"/>
 <xs:element name="pass" type="xs:string" minOccurs="0"/>
 <xs:element name="sexo" type="xs:string" minOccurs="0"/>
+<xs:element name="transporteId" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -79,12 +79,14 @@
 <xs:element name="nombres" type="xs:string" minOccurs="0"/>
 <xs:element name="apellidos" type="xs:string" minOccurs="0"/>
 <xs:element name="dni" type="xs:string" minOccurs="0"/>
-<xs:element name="fechaNacimiento" type="tns:date" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0"/>
 <xs:element name="sexo" type="xs:string" minOccurs="0"/>
 <xs:element name="direccion" type="xs:string" minOccurs="0"/>
 <xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="fechaIngreso" type="tns:date" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:string" minOccurs="0"/>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="cargoId" type="xs:string" minOccurs="0"/>
+<xs:element name="transporteId" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

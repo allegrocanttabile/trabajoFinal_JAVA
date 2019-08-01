@@ -62,11 +62,11 @@ public class PersonaDaoImpl implements PersonaDao {
                persona = new PersonaBean();
                persona.setNombres(rs.getString(2));
                persona.setApellidos(rs.getString(3));
-               persona.setFechaNacimiento(rs.getDate(4));
+               persona.setFechaNacimiento(rs.getString(4));
                persona.setSexo(rs.getString(5));
                persona.setDireccion(rs.getString(6));
                persona.setCelular(rs.getString(7));
-               persona.setFechaIngreso(rs.getDate(8));
+               persona.setFechaIngreso(rs.getString(8));
                return persona;
             }
         } catch (SQLException e) {
@@ -76,21 +76,25 @@ public class PersonaDaoImpl implements PersonaDao {
     }
 
     @Override
-    public Boolean createPersona(String nombres, String apellidos, String dni, Date fechaNacimiento, String sexo, String direccion, String celular, Date fechaIngreso, String pass) {
+    public Boolean createPersona(String nombres, String apellidos, String dni, String fechaNacimiento, String sexo, 
+            String direccion, String celular, String fechaIngreso, String pass, String cargoId, String transporteId) {
         
         Connection accesoDB = db.getConexion();
         try {
             
-                PreparedStatement ps = accesoDB.prepareStatement("insert into persona(nombres, apellidos, dni, fechaNacimiento,sexo, direccion, celular, fechaIngreso, pass) values (?,?,?,?,?,?,?,?,?)");
+                PreparedStatement ps = accesoDB.prepareStatement("insert into persona(nombres, apellidos, dni, fechaNacimiento,sexo, direccion, celular,"
+                        + " fechaIngreso, pass, cargoId, transporteId) values (?,?,?,?,?,?,?,?,?,?,?)");
                 ps.setString(1, nombres);
                 ps.setString(2, apellidos);
                 ps.setString(3, dni);
-                ps.setDate(4, fechaNacimiento);
+                ps.setString(4, fechaNacimiento);
                 ps.setString(5, sexo);
                 ps.setString(6, direccion);
                 ps.setString(7, celular);
-                ps.setDate(8, fechaIngreso);
+                ps.setString(8, fechaIngreso);
                 ps.setString(9, pass);
+                ps.setString(10, cargoId);
+                ps.setString(11, transporteId);
 
                 int rs = ps.executeUpdate();
 
@@ -121,11 +125,11 @@ public class PersonaDaoImpl implements PersonaDao {
                persona.setNombres(rs.getString(2));
                persona.setApellidos(rs.getString(3));
                persona.setDni(rs.getString(4));
-               persona.setFechaNacimiento(rs.getDate(5));
+               persona.setFechaNacimiento(rs.getString(5));
                persona.setSexo(rs.getString(6));
                persona.setDireccion(rs.getString(7));
                persona.setCelular(rs.getString(8));
-               persona.setFechaIngreso(rs.getDate(9));
+               persona.setFechaIngreso(rs.getString(9));
                arreglo.add(persona);
             }
             
@@ -137,22 +141,25 @@ public class PersonaDaoImpl implements PersonaDao {
     }
 
     @Override
-    public Boolean updatePersona(String nombres, String apellidos, String dni, Date fechaNacimiento, String sexo, String direccion, String celular, Date fechaIngreso, String pass) {
+    public Boolean updatePersona(String nombres, String apellidos, String dni, String fechaNacimiento, String sexo, String direccion,
+            String celular, String fechaIngreso, String pass, String cargoId, String transporteId) {
         
          Connection accesoDB = db.getConexion();
         try {
             PreparedStatement ps = accesoDB.prepareStatement("update persona set nombres=?, apellidos=?,"
-                    + " fechaNacimiento=?, sexo=?, direccion=?, celular=?, fechaIngreso=?, pass=?,  where dni=?");
+                    + " fechaNacimiento=?, sexo=?, direccion=?, celular=?, fechaIngreso=?, pass=?, cargoId=?, transporteId=? where dni=?");
             
             ps.setString(1, nombres);
             ps.setString(2, apellidos);
             ps.setString(3, dni);
-            ps.setDate(4, fechaNacimiento);
+            ps.setString(4, fechaNacimiento);
             ps.setString(5, sexo);
             ps.setString(6, direccion);
             ps.setString(7, celular);
-            ps.setDate(8, fechaIngreso);
+            ps.setString(8, fechaIngreso);
             ps.setString(9, pass);
+            ps.setString(10, cargoId);
+            ps.setString(11, transporteId);
             
             int rs = ps.executeUpdate();
             

@@ -27,18 +27,18 @@ public class PersonaServices {
     public PersonaBean buscarUsuario(String dni) {
         return personaDao.buscarUsuario(dni);
     }
-    public Boolean createPersona(String nombres, String apellidos, String dni, Date fechaNacimiento, String sexo,
-            String direccion, String celular, Date fechaIngreso, String pass){
-        return personaDao.createPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass);
+    public Boolean createPersona(String nombres, String apellidos, String dni, String fechaNacimiento, String sexo,
+            String direccion, String celular, String fechaIngreso, String pass, String cargoId, String transporteId){
+        return personaDao.createPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass, cargoId, transporteId);
     }
     
     public ArrayList<PersonaBean> readPersona() {
         return personaDao.readPersona();
     }
     
-    public Boolean updatePersona(String nombres, String apellidos, String dni, Date fechaNacimiento,
-            String sexo, String direccion, String celular, Date fechaIngreso, String pass) {
-        return personaDao.updatePersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass);
+    public Boolean updatePersona(String nombres, String apellidos, String dni, String fechaNacimiento,
+            String sexo, String direccion, String celular, String fechaIngreso, String pass, String cargoId, String transporteId) {
+        return personaDao.updatePersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass, cargoId, transporteId);
         
     }
     

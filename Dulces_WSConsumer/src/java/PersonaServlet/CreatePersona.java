@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
-import ws.Date;
+
 import ws.PersonaWS_Service;
 
 /**
@@ -42,11 +42,11 @@ public class CreatePersona extends HttpServlet {
                 String sexo = request.getParameter("cbosexo");
                 String direccion = request.getParameter("txtdir");
                 String celular = request.getParameter("txtcel");
-                String parseDate(fechaIngreso = request.getParameter("txtfechai")) ;
+                String fechaIngreso = request.getParameter("txtfechai");
                 String password = request.getParameter("txtpass");
-                //String cargoId = request.getParameter("cbocargo");
-                //String transporteId = request.getParameter("cbotrans");
-                Boolean re = createSPersona(nombres, apellidos, dni, null, sexo, direccion, celular, null, password);
+                String cargoId = request.getParameter("cbocargo");
+                String transporteId = request.getParameter("cbotrans");
+                Boolean re = createSPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, password, cargoId, transporteId);
                 if(re){
                     request.setAttribute("name", "-- Usuario registrado --");
                 }else{
@@ -60,7 +60,8 @@ public class CreatePersona extends HttpServlet {
             
              request.setAttribute("name", "--Usuario no registrado --");
         }
-         request.getRequestDispatcher("main.jsp").forward(request, response);
+         request.getRequestDispatcher("Dashboard/views/Personal.jsp").forward(request, response);
+//         request.getRequestDispatcher("main.jsp").forward(request, response);
         
         
     }
@@ -104,12 +105,15 @@ public class CreatePersona extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private boolean createSPersona(java.lang.String nombres, java.lang.String apellidos, java.lang.String dni, ws.Date fechaNacimiento, java.lang.String sexo, java.lang.String direccion, java.lang.String celular, ws.Date fechaIngreso, java.lang.String password) {
+    private boolean createSPersona(java.lang.String nombres, java.lang.String apellidos, java.lang.String dni, java.lang.String fechaNacimiento, java.lang.String sexo, java.lang.String direccion, java.lang.String celular, java.lang.String fechaIngreso, java.lang.String password, java.lang.String cargoId, java.lang.String transporteId) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.PersonaWS port = service.getPersonaWSPort();
-        return port.createSPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, password);
+        return port.createSPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, password, cargoId, transporteId);
     }
+
+    
+    
     
     
     

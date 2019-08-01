@@ -305,7 +305,7 @@
                                 
                             </td><br>
                             
-                        <!--  <td>
+                        <td>
                                 <label for="">Cargo</label><br>
                                 <select class="form-control" name="cbocargo">
                                     <option value="1">Oficinista</option>
@@ -328,7 +328,7 @@
                                 </select>
                                     
                             </td><br>  
-                            -->
+                           
                             
                         </tr>
                         <tr>

@@ -122,6 +122,12 @@ alter table eCategoria modify id int not null primary key auto_increment;
 alter table eMarca modify id int not null primary key auto_increment;
 alter table eModelo modify id int not null primary key auto_increment;
 
+
+alter table cargo add constraint fk_CargoPersona foreign key (id) references persona(id);
+alter table transporte add constraint fk_TransportePersona foreign key (id) references persona(id);
+
+
+/*
 alter table persona add constraint fk_CargoPersona foreign key (cargoId) references cargo(id);
 alter table persona add constraint fk_TransportePersona foreign key (transporteId) references transporte(id);
 alter table transporte add constraint fk_TipoTransporte foreign key (tipoId) references tipo(id);
@@ -135,7 +141,7 @@ alter table eCliente add constraint fk_EmarcaEcliente foreign key (eMarcaId) ref
 alter table eCliente add constraint fk_EmodeloEcliente foreign key (eModeloId) references eModelo(id);
 alter table eCliente add constraint fk_RegistroEcliente foreign key (registroId) references registro(id);
 
-
+*/
 ----------- STORE PROCEDURE-------------
 
 /*---TABLA TIPO---*/

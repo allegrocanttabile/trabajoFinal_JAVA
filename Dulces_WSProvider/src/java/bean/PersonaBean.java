@@ -16,12 +16,14 @@ public class PersonaBean {
     String nombres;
     String apellidos;
     String dni;
-    Date fechaNacimiento;
+    String fechaNacimiento;
     String sexo;
     String direccion;
     String celular;
-    Date fechaIngreso;
+    String fechaIngreso;
     String pass;
+    String cargoId;
+    String transporteId;
 
     public PersonaBean() {
     }
@@ -50,11 +52,11 @@ public class PersonaBean {
         this.dni = dni;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -82,11 +84,11 @@ public class PersonaBean {
         this.celular = celular;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
@@ -96,6 +98,22 @@ public class PersonaBean {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getCargoId() {
+        return cargoId;
+    }
+
+    public void setCargoId(String cargoId) {
+        this.cargoId = cargoId;
+    }
+
+    public String getTransporteId() {
+        return transporteId;
+    }
+
+    public void setTransporteId(String transporteId) {
+        this.transporteId = transporteId;
     }
 
     

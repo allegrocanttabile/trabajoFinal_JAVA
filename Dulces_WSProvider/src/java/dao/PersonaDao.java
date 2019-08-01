@@ -20,13 +20,13 @@ public interface PersonaDao {
     
     public PersonaBean buscarUsuario(String dni);
     
-    public Boolean createPersona(String nombres, String apellidos, String dni, Date fechaNacimiento, String sexo,
-            String direccion, String celular, Date fechaIngreso, String pass);
+    public Boolean createPersona(String nombres, String apellidos, String dni, String fechaNacimiento, String sexo,
+            String direccion, String celular, String fechaIngreso, String pass, String cargoId, String transporteId);
     
     public ArrayList<PersonaBean> readPersona();
     
-    public Boolean updatePersona(String nombres, String apellidos, String dni, Date fechaNacimiento, String sexo,
-            String direccion, String celular, Date fechaIngreso, String pass);
+    public Boolean updatePersona(String nombres, String apellidos, String dni, String fechaNacimiento, String sexo,
+            String direccion, String celular, String fechaIngreso, String pass, String cargoId, String transporteId);
     
     public Boolean deletePersona(String dni);
     

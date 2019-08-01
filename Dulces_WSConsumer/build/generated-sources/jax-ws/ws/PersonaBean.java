@@ -17,14 +17,16 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="apellidos" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="cargoId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="celular" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="direccion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaIngreso" type="{http://ws/}date" minOccurs="0"/>
- *         &lt;element name="fechaNacimiento" type="{http://ws/}date" minOccurs="0"/>
+ *         &lt;element name="fechaIngreso" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="fechaNacimiento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nombres" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pass" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sexo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="transporteId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "personaBean", propOrder = {
     "apellidos",
+    "cargoId",
     "celular",
     "direccion",
     "dni",
@@ -43,19 +46,22 @@ import javax.xml.bind.annotation.XmlType;
     "fechaNacimiento",
     "nombres",
     "pass",
-    "sexo"
+    "sexo",
+    "transporteId"
 })
 public class PersonaBean {
 
     protected String apellidos;
+    protected String cargoId;
     protected String celular;
     protected String direccion;
     protected String dni;
-    protected Date fechaIngreso;
-    protected Date fechaNacimiento;
+    protected String fechaIngreso;
+    protected String fechaNacimiento;
     protected String nombres;
     protected String pass;
     protected String sexo;
+    protected String transporteId;
 
     /**
      * Gets the value of the apellidos property.
@@ -79,6 +85,30 @@ public class PersonaBean {
      */
     public void setApellidos(String value) {
         this.apellidos = value;
+    }
+
+    /**
+     * Gets the value of the cargoId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCargoId() {
+        return cargoId;
+    }
+
+    /**
+     * Sets the value of the cargoId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCargoId(String value) {
+        this.cargoId = value;
     }
 
     /**
@@ -158,10 +188,10 @@ public class PersonaBean {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
@@ -170,10 +200,10 @@ public class PersonaBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public void setFechaIngreso(Date value) {
+    public void setFechaIngreso(String value) {
         this.fechaIngreso = value;
     }
 
@@ -182,10 +212,10 @@ public class PersonaBean {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -194,10 +224,10 @@ public class PersonaBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link String }
      *     
      */
-    public void setFechaNacimiento(Date value) {
+    public void setFechaNacimiento(String value) {
         this.fechaNacimiento = value;
     }
 
@@ -271,6 +301,30 @@ public class PersonaBean {
      */
     public void setSexo(String value) {
         this.sexo = value;
+    }
+
+    /**
+     * Gets the value of the transporteId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTransporteId() {
+        return transporteId;
+    }
+
+    /**
+     * Sets the value of the transporteId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTransporteId(String value) {
+        this.transporteId = value;
     }
 
 }
