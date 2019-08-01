@@ -116,20 +116,26 @@ public class PersonaDaoImpl implements PersonaDao {
         PersonaBean persona = null;
         try {
             
-            PreparedStatement ps = accesoDB.prepareStatement("select * from persona");
+//            PreparedStatement ps = accesoDB.prepareStatement("select * from persona");
+            
+            PreparedStatement ps = accesoDB.prepareStatement("select nombres, apellidos, dni, fechaNacimiento, sexo, direccion, "
+                    + "celular, fechaIngreso, pass, cargoId, transporteId from persona");
             
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()) {
                persona = new PersonaBean();
-               persona.setNombres(rs.getString(2));
-               persona.setApellidos(rs.getString(3));
-               persona.setDni(rs.getString(4));
-               persona.setFechaNacimiento(rs.getString(5));
-               persona.setSexo(rs.getString(6));
-               persona.setDireccion(rs.getString(7));
-               persona.setCelular(rs.getString(8));
-               persona.setFechaIngreso(rs.getString(9));
+               persona.setNombres(rs.getString(1));
+               persona.setApellidos(rs.getString(2));
+               persona.setDni(rs.getString(3));
+               persona.setFechaNacimiento(rs.getString(4));
+               persona.setSexo(rs.getString(5));
+               persona.setDireccion(rs.getString(6));
+               persona.setCelular(rs.getString(7));
+               persona.setFechaIngreso(rs.getString(8));
+               persona.setPass(rs.getString(9));
+               persona.setCargoId(rs.getString(10));
+               persona.setTransporteId(rs.getString(11));
                arreglo.add(persona);
             }
             

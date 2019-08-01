@@ -45,6 +45,63 @@ public interface PersonaWS {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<ws.PersonaBean>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "readSPersona", targetNamespace = "http://ws/", className = "ws.ReadSPersona")
+    @ResponseWrapper(localName = "readSPersonaResponse", targetNamespace = "http://ws/", className = "ws.ReadSPersonaResponse")
+    @Action(input = "http://ws/PersonaWS/readSPersonaRequest", output = "http://ws/PersonaWS/readSPersonaResponse")
+    public List<PersonaBean> readSPersona();
+
+    /**
+     * 
+     * @param apellidos
+     * @param fechaIngreso
+     * @param password
+     * @param cargoId
+     * @param fechaNacimiento
+     * @param direccion
+     * @param celular
+     * @param sexo
+     * @param dni
+     * @param transporteId
+     * @param nombres
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateSPersona", targetNamespace = "http://ws/", className = "ws.UpdateSPersona")
+    @ResponseWrapper(localName = "updateSPersonaResponse", targetNamespace = "http://ws/", className = "ws.UpdateSPersonaResponse")
+    @Action(input = "http://ws/PersonaWS/updateSPersonaRequest", output = "http://ws/PersonaWS/updateSPersonaResponse")
+    public boolean updateSPersona(
+        @WebParam(name = "nombres", targetNamespace = "")
+        String nombres,
+        @WebParam(name = "apellidos", targetNamespace = "")
+        String apellidos,
+        @WebParam(name = "dni", targetNamespace = "")
+        String dni,
+        @WebParam(name = "fechaNacimiento", targetNamespace = "")
+        String fechaNacimiento,
+        @WebParam(name = "sexo", targetNamespace = "")
+        String sexo,
+        @WebParam(name = "direccion", targetNamespace = "")
+        String direccion,
+        @WebParam(name = "celular", targetNamespace = "")
+        String celular,
+        @WebParam(name = "fechaIngreso", targetNamespace = "")
+        String fechaIngreso,
+        @WebParam(name = "password", targetNamespace = "")
+        String password,
+        @WebParam(name = "cargoId", targetNamespace = "")
+        String cargoId,
+        @WebParam(name = "transporteId", targetNamespace = "")
+        String transporteId);
+
+    /**
+     * 
      * @param dni
      * @return
      *     returns ws.PersonaBean
@@ -117,62 +174,5 @@ public interface PersonaWS {
     public Boolean deleteSPersona(
         @WebParam(name = "dni", targetNamespace = "")
         String dni);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<ws.PersonaBean>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "readSPersona", targetNamespace = "http://ws/", className = "ws.ReadSPersona")
-    @ResponseWrapper(localName = "readSPersonaResponse", targetNamespace = "http://ws/", className = "ws.ReadSPersonaResponse")
-    @Action(input = "http://ws/PersonaWS/readSPersonaRequest", output = "http://ws/PersonaWS/readSPersonaResponse")
-    public List<PersonaBean> readSPersona();
-
-    /**
-     * 
-     * @param apellidos
-     * @param fechaIngreso
-     * @param password
-     * @param cargoId
-     * @param fechaNacimiento
-     * @param direccion
-     * @param celular
-     * @param sexo
-     * @param dni
-     * @param transporteId
-     * @param nombres
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateSPersona", targetNamespace = "http://ws/", className = "ws.UpdateSPersona")
-    @ResponseWrapper(localName = "updateSPersonaResponse", targetNamespace = "http://ws/", className = "ws.UpdateSPersonaResponse")
-    @Action(input = "http://ws/PersonaWS/updateSPersonaRequest", output = "http://ws/PersonaWS/updateSPersonaResponse")
-    public boolean updateSPersona(
-        @WebParam(name = "nombres", targetNamespace = "")
-        String nombres,
-        @WebParam(name = "apellidos", targetNamespace = "")
-        String apellidos,
-        @WebParam(name = "dni", targetNamespace = "")
-        String dni,
-        @WebParam(name = "fechaNacimiento", targetNamespace = "")
-        String fechaNacimiento,
-        @WebParam(name = "sexo", targetNamespace = "")
-        String sexo,
-        @WebParam(name = "direccion", targetNamespace = "")
-        String direccion,
-        @WebParam(name = "celular", targetNamespace = "")
-        String celular,
-        @WebParam(name = "fechaIngreso", targetNamespace = "")
-        String fechaIngreso,
-        @WebParam(name = "password", targetNamespace = "")
-        String password,
-        @WebParam(name = "cargoId", targetNamespace = "")
-        String cargoId,
-        @WebParam(name = "transporteId", targetNamespace = "")
-        String transporteId);
 
 }

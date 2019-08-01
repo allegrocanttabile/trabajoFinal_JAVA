@@ -36,9 +36,19 @@ public class ReadPersona extends HttpServlet {
             response.sendRedirect("main.jsp");
         }else{
             request.setAttribute("arreglo", arreglo);
-            request.getRequestDispatcher("Dashboard/views/Personal.jsp").forward(request, response);
+            request.getRequestDispatcher("Dashboard/views/PersonalDetalle.jsp").forward(request, response);
             
         }
+        
+        
+//        if(arreglo!= null){
+//                       
+//            response.sendRedirect("Dashboard/views/PersonalDetalle.jsp");
+//        }else{
+//          response.sendRedirect("main.jsp");  
+//        }
+        
+       
         
         
     }

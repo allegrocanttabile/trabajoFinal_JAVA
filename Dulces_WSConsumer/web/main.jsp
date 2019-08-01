@@ -177,7 +177,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="Dashboard/views/Personal.jsp"><i class="fa fa-circle-o"></i>Detalle Personal</a></li>
+                        <li><a href="Dashboard/views/Personal.jsp"><i class="fa fa-circle-o"></i>Agregar Personal</a></li>
+                        <li><a href="Dashboard/views/PersonalDetalle.jsp"><i class="fa fa-circle-o"></i>Detalle Personal</a></li>
 
                     </ul>
                 </li>

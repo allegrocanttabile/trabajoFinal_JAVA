@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
+    <service name="EMarcaWS">
+      <implementation-class>ws.EMarcaWS</implementation-class>
+    </service>
+    <service name="OficinaWS">
+      <implementation-class>ws.OficinaWS</implementation-class>
+    </service>
+    <service name="EmpresaWS">
+      <implementation-class>ws.EmpresaWS</implementation-class>
+    </service>
     <service name="TipoWS">
       <implementation-class>ws.TipoWS</implementation-class>
+    </service>
+    <service name="ECategoriaWS">
+      <implementation-class>ws.ECategoriaWS</implementation-class>
+    </service>
+    <service name="CargoWS">
+      <implementation-class>ws.CargoWS</implementation-class>
+    </service>
+    <service name="RegistroWS">
+      <implementation-class>ws.RegistroWS</implementation-class>
+    </service>
+    <service name="MarcaWS">
+      <implementation-class>ws.MarcaWS</implementation-class>
+    </service>
+    <service name="EclienteWS">
+      <implementation-class>ws.EclienteWS</implementation-class>
+    </service>
+    <service name="ModeloWS">
+      <implementation-class>ws.ModeloWS</implementation-class>
+    </service>
+    <service name="TransporteWS">
+      <implementation-class>ws.TransporteWS</implementation-class>
+    </service>
+    <service name="EModeloWS">
+      <implementation-class>ws.EModeloWS</implementation-class>
     </service>
     <service name="PersonaWS">
       <implementation-class>ws.PersonaWS</implementation-class>
