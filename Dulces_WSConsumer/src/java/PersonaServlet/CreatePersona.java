@@ -29,39 +29,64 @@ public class CreatePersona extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        try {
-            response.setContentType("text/html;charset=UTF-8");
-            String nombres = request.getParameter("txtnom");
-            
-            if (nombres == null){
-                request.setAttribute("name", null);
-            }else{
-                String apellidos = request.getParameter("txtape");
-                String dni = request.getParameter("txtdni");
-                String fechaNacimiento = request.getParameter("txtfechan");
-                String sexo = request.getParameter("cbosexo");
-                String direccion = request.getParameter("txtdir");
-                String celular = request.getParameter("txtcel");
-                String fechaIngreso = request.getParameter("txtfechai");
-                String password = request.getParameter("txtpass");
-                String cargoId = request.getParameter("cbocargo");
-                String transporteId = request.getParameter("cbotrans");
-                Boolean re = createSPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, password, cargoId, transporteId);
-                if(re){
-                    request.setAttribute("name", "-- Usuario registrado --");
-                }else{
-                    request.setAttribute("name", "--Usuario no registrado --");
-                }
-             
-            }
-            
-            
-        } catch (Exception e) {
-            
-             request.setAttribute("name", "--Usuario no registrado --");
+//        try {
+//            response.setContentType("text/html;charset=UTF-8");
+//            String nombres = request.getParameter("txtnom");
+//            
+//            if (nombres == null){
+//                request.setAttribute("name", null);
+//            }else{
+//                String apellidos = request.getParameter("txtape");
+//                String dni = request.getParameter("txtdni");
+//                String fechaNacimiento = request.getParameter("txtfechan");
+//                String sexo = request.getParameter("cbosexo");
+//                String direccion = request.getParameter("txtdir");
+//                String celular = request.getParameter("txtcel");
+//                String fechaIngreso = request.getParameter("txtfechai");
+//                String password = request.getParameter("txtpass");
+//                String cargoId = request.getParameter("cbocargo");
+//                String transporteId = request.getParameter("cbotrans");
+//                Boolean re = createSPersona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, 
+//        password, cargoId, transporteId);
+//                if(re){
+//                    request.setAttribute("name", "-- Usuario registrado --");
+//                }else{
+//                    request.setAttribute("name", "--Usuario no registrado --");
+//                }
+//             
+//            }
+//            
+//            
+//        } catch (Exception e) {
+//            
+//             request.setAttribute("name", "--Usuario no registrado --");
+//        }
+//         request.getRequestDispatcher("Dashboard/views/Personal.jsp").forward(request, response);
+        
+        response.setContentType("text/html;charset=UTF-8");
+        
+        String nombres = request.getParameter("txtnom");
+        String apellidos = request.getParameter("txtape");
+        String dni = request.getParameter("txtdni");
+        String fechaNacimiento = request.getParameter("txtfechan");
+        String sexo = request.getParameter("cbosexo");
+        String direccion = request.getParameter("txtdir");
+        String celular = request.getParameter("txtcel");
+        String fechaIngreso = request.getParameter("txtfechai");
+        String password = request.getParameter("txtpass");
+        String cargoId = request.getParameter("cbocargo");
+        String transporteId = request.getParameter("cbotrans");
+        
+        Boolean re = createSPersona(nombres, apellidos, dni, fechaNacimiento,
+                sexo, direccion, celular, fechaIngreso, password, cargoId, transporteId);
+        
+        if(re!= null){
+                       
+            response.sendRedirect("Dashboard/views/Personal.jsp");
+        }else{
+          response.sendRedirect("main.jsp");  
         }
-         request.getRequestDispatcher("Dashboard/views/Personal.jsp").forward(request, response);
-//         request.getRequestDispatcher("main.jsp").forward(request, response);
+        
         
         
     }
