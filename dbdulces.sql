@@ -142,6 +142,7 @@ alter table eCliente add constraint fk_EmodeloEcliente foreign key (eModeloId) r
 alter table eCliente add constraint fk_RegistroEcliente foreign key (registroId) references registro(id);
 
 */
+
 ----------- STORE PROCEDURE-------------
 
 /*---TABLA TIPO---*/
