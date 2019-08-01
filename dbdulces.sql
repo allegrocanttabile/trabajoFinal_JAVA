@@ -18,10 +18,6 @@ transporteId int
 );
 
 
-
-insert into persona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass, cargoId, transporteId) values
-('juana', 'la cubana', '12345678', '1987-09-22', 'F', 'santa anita', '986885844', '1987-09-22', '123', '1', '1');
-
 create table cargo(
 id int not null,
 tipo varchar(200)not null,
@@ -132,6 +128,10 @@ alter table cargo add constraint fk_CargoPersona foreign key (id) references per
 alter table transporte add constraint fk_TransportePersona foreign key (id) references persona(id);
 
 
+
+insert into persona(nombres, apellidos, dni, fechaNacimiento, sexo, direccion, celular, fechaIngreso, pass, cargoId, transporteId) values
+('juana', 'la cubana', '12345678', '1987-09-22', 'F', 'santa anita', '986885844', '1987-09-22', '123', '1', '1');
+
 /*
 alter table persona add constraint fk_CargoPersona foreign key (cargoId) references cargo(id);
 alter table persona add constraint fk_TransportePersona foreign key (transporteId) references transporte(id);
@@ -148,40 +148,3 @@ alter table eCliente add constraint fk_RegistroEcliente foreign key (registroId)
 
 */
 
-
-
------------ STORE PROCEDURE-------------
-
-/*---TABLA TIPO---*/
-delimiter $$
-create procedure sp_crTipo(
-in p_id int,
-in p_nombre varchar(200)
-)
-begin
-insert into tipo(id, nombre) values(p_id, p_nombre);
-end $$
-
-delimiter $$
-create procedure sp_reTipo()
-begin
-select * from tipo;
-end $$
-
-
-delimiter $$
-create procedure sp_upTipo(
-in p_id int,
-in p_nombre varchar(200)
-)
-begin
-update tipo set nombre=p_nombre where id=p_id;
-end $$
-
-delimiter $$
-create procedure sp_deTipo(
-in p_id int
-)
-begin
-delete from tipo where id=p_id;
-end $$
