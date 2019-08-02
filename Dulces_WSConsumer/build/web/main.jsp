@@ -152,7 +152,8 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="Dashboard/views/purchase2.jsp"><i class="fa fa-circle-o"></i> Detalle Transportes</a></li>
+                                <li><a href="Dashboard/views/Transporte.jsp"><i class="fa fa-circle-o"></i> Agregar Transporte</a></li>
+                                <li><a href="Dashboard/views/Transporte.jsp"><i class="fa fa-circle-o"></i> Detalle Transporte</a></li>
                                 
                             </ul>
                         </li>

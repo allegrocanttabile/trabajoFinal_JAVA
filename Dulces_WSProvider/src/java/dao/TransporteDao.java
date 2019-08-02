@@ -8,11 +8,11 @@ public interface TransporteDao {
 
     public TransporteBean buscarTransporte(String Id);
 
-    public Boolean createTransporte(String placa, Date anoFabricacion, Date fechaMantenimiento);
+    public Boolean createTransporte(String placa, String anoFabricacion, String fechaMantenimiento);
 
     public ArrayList<TransporteBean> readTransporte();
 
-    public Boolean updateTransporte(String placa, Date anoFabricacion, Date fechaMantenimiento);
+    public Boolean updateTransporte(String placa, String anoFabricacion, String fechaMantenimiento);
 
     public Boolean deleteTransporte(String Id);
 }

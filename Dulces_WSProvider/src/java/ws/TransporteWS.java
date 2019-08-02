@@ -5,9 +5,15 @@
  */
 package ws;
 
+import bean.TransporteBean;
+import java.sql.Date;
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import services.TransporteServices;
+
+
 
 /**
  *
@@ -15,12 +21,19 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "TransporteWS")
 public class TransporteWS {
+    
+    
+    TransporteServices transporteService = new TransporteServices();
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "createTransporte")
+    public boolean createTransporte(@WebParam(name = "placa") String placa, @WebParam(name = "anoFabricacion") String anoFabricacion,
+            @WebParam(name = "fechaMantenimiento") String fechaMantenimiento) {
+        return transporteService.createTransporte(placa, anoFabricacion, fechaMantenimiento);
     }
+
+    @WebMethod(operationName = "readTransporte")
+    public ArrayList<TransporteBean> readTransporte() {
+        return transporteService.readTransporte();
+    }
+    
 }

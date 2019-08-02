@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/PersonaWS"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-PersonaWS"/>
+    <target name="wsimport-client-TransporteWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TransporteWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TransporteWS" destdir="${build.generated.dir}/jax-wsCache/TransporteWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TransporteWS/wsdl/localhost_8080/Dulces_WSProvider/TransporteWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Dulces_WSProvider/TransporteWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TransporteWS/wsdl/localhost_8080/Dulces_WSProvider/TransporteWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TransporteWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TransporteWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TransporteWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TransporteWS"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PersonaWS, wsimport-client-TransporteWS"/>
 </project>

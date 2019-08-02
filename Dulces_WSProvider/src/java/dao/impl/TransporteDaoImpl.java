@@ -4,13 +4,12 @@ import bean.RegistroBean;
 import bean.TransporteBean;
 import dao.TransporteDao;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.activation.DataSource;
 import utils.ConexionDB;
+
 
 public class TransporteDaoImpl implements TransporteDao {
 
@@ -26,14 +25,14 @@ public class TransporteDaoImpl implements TransporteDao {
     }
 
     @Override
-    public Boolean createTransporte(String placa, Date anoFabricacion, Date fechaMantenimiento) {
+    public Boolean createTransporte(String placa, String anoFabricacion, String fechaMantenimiento) {
         Connection accesoDB = db.getConexion();
         try {
 
             PreparedStatement ps = accesoDB.prepareStatement("insert into transporte(placa,anoFabricacion,fechaMantenimiento) values (?,?,?)");
             ps.setString(1, placa);
-            ps.setDate(2, anoFabricacion);
-            ps.setDate(3, fechaMantenimiento);
+            ps.setString(2, anoFabricacion);
+            ps.setString(3, fechaMantenimiento);
 
             int rs = ps.executeUpdate();
 
@@ -44,12 +43,11 @@ public class TransporteDaoImpl implements TransporteDao {
         } catch (SQLException e) {
         }
         return false;
-
     }
 
-@Override
-        public ArrayList<TransporteBean> readTransporte() {
-        ArrayList<TransporteBean> arreglo = new ArrayList<>();
+    @Override
+    public ArrayList<TransporteBean> readTransporte() {
+         ArrayList<TransporteBean> arreglo = new ArrayList<>();
         Connection accesoDB = db.getConexion();
         TransporteBean trans = null;
         try {
@@ -69,17 +67,18 @@ public class TransporteDaoImpl implements TransporteDao {
         } catch (SQLException e) {
         }
         return arreglo;
-
     }
 
     @Override
-        public Boolean updateTransporte(String placa, Date anoFabricacion, Date fechaMantenimiento) {
+    public Boolean updateTransporte(String placa, String anoFabricacion, String fechaMantenimiento) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-        public Boolean deleteTransporte(String Id) {
+    public Boolean deleteTransporte(String Id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 
 }
